@@ -7,7 +7,7 @@ spec:
     matchLabels:
       app: redis-stedi-craigen  # has to match .spec.template.metadata.labels
   serviceName: redis-stedi-craigen
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
