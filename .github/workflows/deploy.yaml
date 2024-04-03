@@ -7,9 +7,9 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: scrum-team4-cit262    # Add your cluster name
-  GKE_ZONE: africa-south1  # Add your cluster zone 
-  DEPLOYMENT_NAME: craigen-api # Add your deployment name 
+  GKE_CLUSTER: scrum-team4-cit262    # Add your cluster name here.
+  GKE_ZONE: africa-south1   # Add your cluster zone here.
+  DEPLOYMENT_NAME: craigen-api # Add your deployment name here.
   IMAGE: craigen-api
 
 jobs:
@@ -41,7 +41,7 @@ jobs:
       with:
         credentials_json: ${{ secrets.GKE_SA_KEY }}
 
-    # Get the GKE credentials so we can deploy to cluster
+    # Get the GKE credentials so we can deploy to the cluster
     - uses: google-github-actions/get-gke-credentials@db150f2cc60d1716e61922b832eae71d2a45938f
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}
@@ -69,4 +69,3 @@ jobs:
         kubectl apply -f dev-manifest.yaml
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
-
