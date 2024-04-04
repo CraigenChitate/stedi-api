@@ -58,7 +58,7 @@ jobs:
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
 
-    # Push the Docker image to Google Container Registry
+    # Push the Docker image to Google 
     - name: Publish
       run: |-
         docker push "us-docker.pkg.dev/my-project-1st-416402/craigen-api/stedi-api:latest"
