@@ -9,7 +9,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: scrum-team4-cit262    # Add your cluster
   GKE_ZONE: africa-south1   # Add your cluster 
-  DEPLOYMENT_NAME: craigen-api # Add your deployment
+  DEPLOYMENT_NAME: craigen-api # Add your deployment name
   IMAGE: craigen-api
 
 jobs:
@@ -58,7 +58,7 @@ jobs:
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
 
-    # Push the Docker image to Google 
+    # Push the Docker image to Google CLOUD
     - name: Publish
       run: |-
         docker push "us-docker.pkg.dev/my-project-1st-416402/craigen-api/stedi-api:latest"
